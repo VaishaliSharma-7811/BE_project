@@ -28,11 +28,9 @@ body {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     font-weight: bold;
-    color: #4c6fff;
+    color: #00e0a4;
+    letter-spacing: 2px;
 }
 
 .search-box input {
@@ -70,21 +68,25 @@ body {
 
 /* ================= MENU ================= */
 
+/* MENU */
 .menu {
     display: flex;
-    gap: 30px;
-    padding: 15px 60px;
-    background: #0f0f0f;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
 }
 
 .menu a {
     text-decoration: none;
     color: #aaa;
+    font-weight: 500;
+    cursor: pointer;
 }
 
+.menu a:hover,
 .menu a.active {
-    color: white;
-    font-weight: bold;
+    color: #00e0a4;
 }
 
 /* ================= MAIN LAYOUT ================= */
@@ -219,7 +221,7 @@ body {
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo">BuyCrypto</div>
+    <div class="logo">CryptoVista</div>
 
     <div class="search-box">
         <input type="text" placeholder="Search...">
@@ -237,6 +239,7 @@ body {
     <a>Holdings</a>
     <a>Watchlist</a>
     <a>Copytrading</a>
+    <a>BuyCrypto</a>
 </div>
 
 <!-- MAIN CONTENT -->
