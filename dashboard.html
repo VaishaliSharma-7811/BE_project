@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - Explore</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.search-box input {
+    background: #1a1a1a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    outline: none;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #00e0a4;
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+/* ================= SECTION BOX ================= */
+
+.section-box {
+    background: #121212;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* ================= COIN GRID ================= */
+
+.coin-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.coin-card {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.coin-card:hover {
+    box-shadow: 0 0 15px rgba(0,255,191,0.2);
+    transform: translateY(-3px);
+}
+
+.coin-card h4 {
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.positive { color: #00e0a4; }
+.negative { color: #ff4d4d; }
+
+/* ================= NEWS SECTION ================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.news-card {
+    background: #1a1a1a;
+    padding: 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0,255,191,0.15);
+}
+
+.news-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.news-card:hover img {
+    transform: scale(1.05);
+}
+
+.news-card p {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* ================= INVESTMENT BOX ================= */
+
+.investment-box {
+    background: #121212;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.investment-box h3 {
+    margin-bottom: 20px;
+}
+
+.stat {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.stat span {
+    float: right;
+}
+
+.red { color: #ff4d4d; }
+.green { color: #00e0a4; }
+
+/* ================= TRADING SCREEN ================= */
+
+.trading-box {
+    margin-top: 40px;
+}
+
+.trading-item {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.bullish {
+    background: #003f2d;
+    color: #00e0a4;
+}
+
+.bearish {
+    background: #3f0000;
+    color: #ff4d4d;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CryptoVista</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a class="active">Explore</a>
+    <a>Holdings</a>
+    <a>Watchlist</a>
+    <a>Copytrading</a>
+    <a>BuyCrypto</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <!-- LEFT SIDE -->
+    <div>
+
+        <!-- Most Traded Coins -->
+        <div class="section-box">
+            <div class="section-title">Most traded coins on CryptoVista</div>
+
+            <div class="coin-grid">
+                <div class="coin-card">
+                    <h4>Bitcoin (BTC)</h4>
+                    <div class="price">$63,808.96</div>
+                    <div class="negative">-1.27%</div>
+                </div>
+
+                <div class="coin-card">
+                    <h4>Ethereum (ETH)</h4>
+                    <div class="price">$3,450.21</div>
+                    <div class="positive">+2.14%</div>
+                </div>
+
+                <div class="coin-card">
+                    <h4>Tether (USDT)</h4>
+                    <div class="price">$1.00</div>
+                    <div class="positive">+0.01%</div>
+                </div>
+
+                <div class="coin-card">
+                    <h4>XRP (XRP)</h4>
+                    <div class="price">$0.52</div>
+                    <div class="negative">-0.45%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coins in News Today -->
+        <div class="section-box">
+            <div class="section-title">Coins in News Today</div>
+
+            <div class="news-grid">
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040" alt="Bitcoin">
+                    <h4>Bitcoin hits new resistance level</h4>
+                    <p>BTC struggles near $64,000 as traders await market signals.</p>
+                </div>
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1621768216002-5ac171876625" alt="Ethereum">
+                    <h4>Ethereum upgrade boosts network speed</h4>
+                    <p>ETH developers announce performance improvements.</p>
+                </div>
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1621501103258-3e135c8c1a41" alt="XRP">
+                    <h4>XRP sees increased trading volume</h4>
+                    <p>Ripple token demand rises amid market volatility.</p>
+                </div>
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05" alt="Solana">
+                    <h4>Solana ecosystem expands rapidly</h4>
+                    <p>New DeFi projects launching on Solana blockchain.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div>
+
+        <!-- Investment Summary -->
+        <div class="investment-box">
+            <h3>Your investments</h3>
+
+            <div class="stat">Current <span>₹42,987</span></div>
+            <div class="stat">1D returns <span class="red">-₹208.50 (0.48%)</span></div>
+            <div class="stat">Total returns <span class="red">-₹21,085.50 (32.91%)</span></div>
+            <div class="stat">Invested <span>₹64,073</span></div>
+        </div>
+
+        <!-- Trading Screens -->
+        <div class="trading-box">
+            <h3 style="margin:20px 0;">Trading Screens</h3>
+
+            <div class="trading-item">
+                <div class="badge bullish">Bullish</div>
+                Resistance breakouts
+            </div>
+
+            <div class="trading-item">
+                <div class="badge bullish">Bullish</div>
+                MACD above signal line
+            </div>
+
+            <div class="trading-item">
+                <div class="badge bearish">Bearish</div>
+                RSI overbought
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
