@@ -29,6 +29,7 @@ body {
 
 .logo {
     font-weight: bold;
+    font-size: 18px;
     color: #00e0a4;
     letter-spacing: 2px;
 }
@@ -40,35 +41,26 @@ body {
     border-radius: 8px;
     color: white;
     width: 250px;
+    outline: none;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Logout Button */
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.notification {
-    background: #ff4d4d;
-    color: white;
-    font-size: 12px;
-    padding: 3px 6px;
-    border-radius: 50%;
-}
-
-.avatar {
-    background: #6b4f4f;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.logout-btn:hover {
+    background: #00c58f;
 }
 
 /* ================= MENU ================= */
 
-/* MENU */
 .menu {
     display: flex;
     justify-content: center;
@@ -98,18 +90,21 @@ body {
     padding: 40px 60px;
 }
 
-/* ================= COIN SECTION ================= */
+/* ================= SECTION BOX ================= */
 
 .section-box {
     background: #121212;
     padding: 25px;
     border-radius: 12px;
+    margin-bottom: 30px;
 }
 
 .section-title {
     margin-bottom: 20px;
     font-weight: bold;
 }
+
+/* ================= COIN GRID ================= */
 
 .coin-grid {
     display: grid;
@@ -141,6 +136,45 @@ body {
 .positive { color: #00e0a4; }
 .negative { color: #ff4d4d; }
 
+/* ================= NEWS SECTION ================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.news-card {
+    background: #1a1a1a;
+    padding: 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0,255,191,0.15);
+}
+
+.news-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.news-card:hover img {
+    transform: scale(1.05);
+}
+
+.news-card p {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
 /* ================= INVESTMENT BOX ================= */
 
 .investment-box {
@@ -164,25 +198,6 @@ body {
 
 .red { color: #ff4d4d; }
 .green { color: #00e0a4; }
-
-/* ================= NEWS SECTION ================= */
-
-.news-section {
-    margin-top: 40px;
-    padding: 0 60px 40px;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.news-card {
-    background: #121212;
-    padding: 20px;
-    border-radius: 12px;
-}
 
 /* ================= TRADING SCREEN ================= */
 
@@ -227,10 +242,7 @@ body {
         <input type="text" placeholder="Search...">
     </div>
 
-    <div class="profile">
-        🔔 <div class="notification">5</div>
-        <div class="avatar">P</div>
-    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
 </div>
 
 <!-- MENU -->
@@ -247,6 +259,8 @@ body {
 
     <!-- LEFT SIDE -->
     <div>
+
+        <!-- Most Traded Coins -->
         <div class="section-box">
             <div class="section-title">Most traded coins on CryptoVista</div>
 
@@ -276,10 +290,46 @@ body {
                 </div>
             </div>
         </div>
+
+        <!-- Coins in News Today -->
+        <div class="section-box">
+            <div class="section-title">Coins in News Today</div>
+
+            <div class="news-grid">
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040" alt="Bitcoin">
+                    <h4>Bitcoin hits new resistance level</h4>
+                    <p>BTC struggles near $64,000 as traders await market signals.</p>
+                </div>
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1621768216002-5ac171876625" alt="Ethereum">
+                    <h4>Ethereum upgrade boosts network speed</h4>
+                    <p>ETH developers announce performance improvements.</p>
+                </div>
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1621501103258-3e135c8c1a41" alt="XRP">
+                    <h4>XRP sees increased trading volume</h4>
+                    <p>Ripple token demand rises amid market volatility.</p>
+                </div>
+
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05" alt="Solana">
+                    <h4>Solana ecosystem expands rapidly</h4>
+                    <p>New DeFi projects launching on Solana blockchain.</p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
     <!-- RIGHT SIDE -->
     <div>
+
+        <!-- Investment Summary -->
         <div class="investment-box">
             <h3>Your investments</h3>
 
@@ -289,6 +339,7 @@ body {
             <div class="stat">Invested <span>₹64,073</span></div>
         </div>
 
+        <!-- Trading Screens -->
         <div class="trading-box">
             <h3 style="margin:20px 0;">Trading Screens</h3>
 
@@ -307,9 +358,16 @@ body {
                 RSI overbought
             </div>
         </div>
+
     </div>
 
 </div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>
