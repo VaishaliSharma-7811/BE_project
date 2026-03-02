@@ -3,256 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>CryptoVista - Explore</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b0b0b;
-    color: white;
-}
-
-/* ================= NAVBAR ================= */
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 60px;
-    background: #111;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 18px;
-    color: #00e0a4;
-    letter-spacing: 2px;
-}
-
-.search-box input {
-    background: #1a1a1a;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 8px;
-    color: white;
-    width: 250px;
-    outline: none;
-}
-
-/* Logout Button */
-.logout-btn {
-    background: #00e0a4;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.logout-btn:hover {
-    background: #00c58f;
-}
-
-/* ================= MENU ================= */
-
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    background: #121212;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.menu a:hover,
-.menu a.active {
-    color: #00e0a4;
-}
-
-/* ================= MAIN LAYOUT ================= */
-
-.main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    padding: 40px 60px;
-}
-
-/* ================= SECTION BOX ================= */
-
-.section-box {
-    background: #121212;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-}
-
-.section-title {
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* ================= COIN GRID ================= */
-
-.coin-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.coin-card {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.coin-card:hover {
-    box-shadow: 0 0 15px rgba(0,255,191,0.2);
-    transform: translateY(-3px);
-}
-
-.coin-card h4 {
-    margin-bottom: 8px;
-}
-
-.price {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.positive { color: #00e0a4; }
-.negative { color: #ff4d4d; }
-
-/* ================= NEWS SECTION ================= */
-
-.news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.news-card {
-    background: #1a1a1a;
-    padding: 18px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.news-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(0,255,191,0.15);
-}
-
-.news-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: 0.3s;
-}
-
-.news-card:hover img {
-    transform: scale(1.05);
-}
-
-.news-card p {
-    font-size: 13px;
-    color: #aaa;
-    margin-top: 8px;
-}
-
-/* ================= INVESTMENT BOX ================= */
-
-.investment-box {
-    background: #121212;
-    padding: 25px;
-    border-radius: 12px;
-}
-
-.investment-box h3 {
-    margin-bottom: 20px;
-}
-
-.stat {
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-.stat span {
-    float: right;
-}
-
-.red { color: #ff4d4d; }
-.green { color: #00e0a4; }
-
-/* ================= TRADING SCREEN ================= */
-
-.trading-box {
-    margin-top: 40px;
-}
-
-.trading-item {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.badge {
-    display: inline-block;
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-.bullish {
-    background: #003f2d;
-    color: #00e0a4;
-}
-
-.bearish {
-    background: #3f0000;
-    color: #ff4d4d;
-}
-</style>
+<link rel="stylesheet" href="explore.css">
+<link rel="icon" type="image/png" href="Cryptovistalogo.png">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">CryptoVista</div>
+<nav class="navbar">
 
-    <div class="search-box">
-        <input type="text" placeholder="Search...">
+    <!-- Left Section -->
+    <div class="nav-left">
+        <div class="logo">
+            <img src="Cryptovistalogo.png" alt="logo">
+            <span>CryptoVista</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="explore.html" class="active">Explore</a></li>
+            <li><a href="holdings.html">Holdings</a></li>
+            <li><a href="wishlist.html">Watchlist</a></li>
+            <li><a href="copytrading.html">Copytrading</a></li>
+        </ul>
     </div>
 
-    <button class="logout-btn" onclick="logout()">Logout</button>
-</div>
+    <!-- Right Section -->
+    <div class="nav-right">
 
-<!-- MENU -->
-<div class="menu">
-    <a class="active">Explore</a>
-    <a>Holdings</a>
-    <a>Watchlist</a>
-    <a>Copytrading</a>
-    <a>BuyCrypto</a>
-</div>
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search....">
+    </div>
+
+    <div class="notification">
+        <i class="fa-regular fa-bell"></i>
+        <span class="badge">5</span>
+    </div>
+
+    <div class="profile">P</div>
+
+    <div class="theme-toggle" id="themeToggle">
+        🌙
+    </div>
+
+  </div>
+
+</nav>
 
 <!-- MAIN CONTENT -->
 <div class="main">
@@ -362,12 +157,62 @@ body {
     </div>
 
 </div>
+<footer class="footer">
+    <div class="footer-container">
 
-<script>
-function logout() {
-    window.location.href = "login.html";
-}
-</script>
+        <!-- Left Section -->
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="Cryptovistalogo.png" alt="logo">
+                <h2>CRYPTOVISTA</h2>
+            </div>
+
+            <p class="footer-address">
+                TG-212, 2nd floor, Turing block <br>
+                Chitkara University, Jansla, Patiala - 173212 <br>
+                Punjab
+            </p>
+
+            <div class="footer-links">
+                <a href="#">Contact Us</a>
+                <a href="#">Download the App</a>
+            </div>
+
+            <div class="social-icons">
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <p class="copyright">
+                2026 CryptoVista. All rights reserved.
+            </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="footer-right">
+            <h3>CryptoVista</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Media & Press</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Help & Support</a></li>
+                <li><a href="#">Trust & Safety</a></li>
+                <li><a href="#">Investor Relations</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Font Awesome CDN (for icons) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+<script src="explore.js"></script>
 
 </body>
 </html>
