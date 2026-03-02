@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - Watchlist</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.search-box input {
+    background: #1a1a1a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    outline: none;
+}
+
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.menu a.active {
+    color: #00e0a4;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    padding: 40px 60px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= TABLE ================= */
+
+.table-box {
+    background: #121212;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    color: #aaa;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+tr {
+    border-bottom: 1px solid #1f1f1f;
+}
+
+tr:hover {
+    background: #1a1a1a;
+}
+
+.green { color: #00e0a4; }
+.red { color: #ff4d4d; }
+
+.remove-btn {
+    background: #ff4d4d;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.remove-btn:hover {
+    background: #cc0000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CryptoVista</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="dashboard.html">Explore</a>
+    <a href="holdings.html">Holdings</a>
+    <a class="active" href="watchlist.html">Watchlist</a>
+    <a href="#">Copytrading</a>
+    <a href="#">BuyCrypto</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <div class="header">
+        <h2>Your Watchlist</h2>
+        <button class="add-btn" onclick="addCoin()">+ Add Coin</button>
+    </div>
+
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Coin</th>
+                    <th>Price</th>
+                    <th>24h Change</th>
+                    <th>Market Cap</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="watchlistBody">
+                <tr>
+                    <td>Bitcoin (BTC)</td>
+                    <td>$63,808</td>
+                    <td class="red">-1.27%</td>
+                    <td>$1.2T</td>
+                    <td><button class="remove-btn" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+
+                <tr>
+                    <td>Ethereum (ETH)</td>
+                    <td>$3,450</td>
+                    <td class="green">+2.14%</td>
+                    <td>$400B</td>
+                    <td><button class="remove-btn" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+
+/* REMOVE FUNCTION */
+function removeRow(button) {
+    const row = button.closest("tr");
+    row.style.transition = "0.3s";
+    row.style.opacity = "0";
+    setTimeout(() => {
+        row.remove();
+    }, 300);
+}
+
+/* ADD COIN FUNCTION */
+function addCoin() {
+    const coin = prompt("Enter Coin Name (e.g., Solana (SOL)):");
+    if (!coin) return;
+
+    const price = prompt("Enter Current Price (e.g., 135):");
+    if (!price) return;
+
+    const change = prompt("Enter 24h Change (%) (e.g., -1.25 or 2.50):");
+    if (!change) return;
+
+    const marketCap = prompt("Enter Market Cap (e.g., 60B):");
+    if (!marketCap) return;
+
+    const tbody = document.getElementById("watchlistBody");
+
+    const row = document.createElement("tr");
+
+    const changeValue = parseFloat(change);
+    const changeClass = changeValue >= 0 ? "green" : "red";
+
+    row.innerHTML = `
+        <td>${coin}</td>
+        <td>$${price}</td>
+        <td class="${changeClass}">
+            ${changeValue >= 0 ? "+" : ""}${change}%
+        </td>
+        <td>$${marketCap}</td>
+        <td><button class="remove-btn" onclick="removeRow(this)">Remove</button></td>
+    `;
+
+    tbody.appendChild(row);
+}
+</script>
+
+</body>
+</html>

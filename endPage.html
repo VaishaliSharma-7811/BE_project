@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - Contact</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY FLEX FIX ================= */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* This pushes footer to bottom */
+.content {
+    flex: 1;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MAIN SECTION ================= */
+
+.container {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.container p {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #121212;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid #1f1f1f;
+}
+
+.footer-section {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #00e0a4;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    color: #aaa;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+    color: #00e0a4;
+}
+
+/* ================= COPYRIGHT ================= */
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid #1f1f1f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">CryptoVista</div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p>We’re here to help you trade smarter and invest better.</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+
+    <div class="footer-section">
+        <h4>CryptoVista</h4>
+        <p>Your trusted crypto trading platform.</p>
+        <p>Email: support@cryptovista.com</p>
+        <p>Phone: +91 98765 43210</p>
+    </div>
+
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="dashboard.html">Explore</a>
+        <a href="holdings.html">Holdings</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="copytrading.html">CopyTrading</a>
+        <a href="buycrypto.html">BuyCrypto</a>
+    </div>
+
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 CryptoVista. All rights reserved.
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

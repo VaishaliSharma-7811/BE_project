@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - Holdings</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.search-box input {
+    background: #1a1a1a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    outline: none;
+}
+
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.menu a.active {
+    color: #00e0a4;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    padding: 40px 60px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary {
+    background: #121212;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.summary h2 {
+    margin-bottom: 20px;
+}
+
+.summary-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.green { color: #00e0a4; }
+.red { color: #ff4d4d; }
+
+/* ================= TABLE ================= */
+
+.table-box {
+    background: #121212;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    color: #aaa;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+tr {
+    border-bottom: 1px solid #1f1f1f;
+}
+
+tr:hover {
+    background: #1a1a1a;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CryptoVista</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="dashboard.html">Explore</a>
+    <a class="active" href="holdings.html">Holdings</a>
+    <a href="#">Watchlist</a>
+    <a href="#">Copytrading</a>
+    <a href="#">BuyCrypto</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <!-- Portfolio Summary -->
+    <div class="summary">
+        <h2>Your Portfolio Summary</h2>
+
+        <div class="summary-grid">
+            <div class="summary-item">Total Value: ₹42,987</div>
+            <div class="summary-item">Invested: ₹64,073</div>
+            <div class="summary-item red">Total Returns: -₹21,085 (-32.91%)</div>
+            <div class="summary-item red">1D Change: -₹208 (-0.48%)</div>
+        </div>
+    </div>
+
+    <!-- Holdings Table -->
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Coin</th>
+                    <th>Quantity</th>
+                    <th>Avg Price</th>
+                    <th>Current Price</th>
+                    <th>Total Value</th>
+                    <th>P/L</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Bitcoin (BTC)</td>
+                    <td>0.5</td>
+                    <td>₹70,000</td>
+                    <td>₹63,808</td>
+                    <td>₹31,904</td>
+                    <td class="red">-₹3,096</td>
+                </tr>
+
+                <tr>
+                    <td>Ethereum (ETH)</td>
+                    <td>2</td>
+                    <td>₹3,000</td>
+                    <td>₹3,450</td>
+                    <td>₹6,900</td>
+                    <td class="green">+₹900</td>
+                </tr>
+
+                <tr>
+                    <td>XRP</td>
+                    <td>100</td>
+                    <td>₹0.60</td>
+                    <td>₹0.52</td>
+                    <td>₹52</td>
+                    <td class="red">-₹8</td>
+                </tr>
+
+                <tr>
+                    <td>Solana (SOL)</td>
+                    <td>5</td>
+                    <td>₹120</td>
+                    <td>₹135</td>
+                    <td>₹675</td>
+                    <td class="green">+₹75</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
