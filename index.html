@@ -1,43 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>CryptoVista</title>
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <title>Cryptovista</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="Cryptovistalogo.png">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <div class="logo">CRYPTOVISTA</div>
+    <!-- Navbar -->
+<nav class="navbar">
 
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search coin...">
+    <!-- Left Section -->
+    <div class="nav-left">
+        <div class="logo">
+            <img src="Cryptovistalogo.png" alt="logo">
+            <span>CryptoVista</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="holdings.html">Holdings</a></li>
+            <li><a href="wishlist.html">Watchlist</a></li>
+            <li><a href="copytrading.html">Copytrading</a></li>
+        </ul>
     </div>
 
-    <button class="auth-btn" onclick="goToLogin()">Login / Signup</button>
+    <!-- Right Section -->
+    <div class="nav-right">
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search....">
+    </div>
+
+    <div class="notification">
+        <i class="fa-regular fa-bell"></i>
+        <span class="badge">5</span>
+    </div>
+
+    <div class="profile">P</div>
+
+    <div class="theme-toggle" id="themeToggle">
+        🌙
+    </div>
+
+  </div>
+
 </nav>
 
-<!-- HERO SECTION -->
-<section class="hero">
+<!-- Font Awesome CDN -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
 
-    <div class="hero-text">
+    <!-- Hero Section -->
+    <section class="hero">
         <h1>Crypto made Easy.</h1>
-        <button id="getStarted">Get Started</button>
+        <a href="login.html" class="cta-btn">Get started</a>
+
+        <div class="hero-image">
+            <img src="landing.png" alt="crypto illustration">
+        </div>
+    </section>
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left Section -->
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="Cryptovistalogo.png" alt="logo">
+                <h2>CRYPTOVISTA</h2>
+            </div>
+
+            <p class="footer-address">
+                TG-212, 2nd floor, Turing block <br>
+                Chitkara University, Jansla, Patiala - 173212 <br>
+                Punjab
+            </p>
+
+            <div class="footer-links">
+                <a href="#">Contact Us</a>
+                <a href="#">Download the App</a>
+            </div>
+
+            <div class="social-icons">
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <p class="copyright">
+                2026 CryptoVista. All rights reserved.
+            </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="footer-right">
+            <h3>CryptoVista</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Media & Press</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Help & Support</a></li>
+                <li><a href="#">Trust & Safety</a></li>
+                <li><a href="#">Investor Relations</a></li>
+            </ul>
+        </div>
+
     </div>
+</footer>
 
-    <div class="hero-image">
-        <!-- Replace this with your crypto illustration -->
-        <img src="https://cdn-icons-png.flaticon.com/512/825/825519.png" alt="Crypto Illustration">
-    </div>
+<!-- Font Awesome CDN (for icons) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 
-</section>
-
-<div class="tagline">
-    Trade smarter. Invest better.
-</div>
-<script src="index.js"></script>
- 
+    <script src="index.js"></script>
 </body>
 </html>

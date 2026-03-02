@@ -11,31 +11,81 @@ body {
 }
 
 /* ================= NAVBAR ================= */
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 60px;
-    background: #111;
+    padding: 10px 50px;   /* reduced from 15px 60px */
+    background-color: #000;
+    border-bottom: 1px solid #111;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 18px;
-    color: #00e0a4;
-    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 30px;
+}
+
+.logo span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #111;
+    padding: 6px 12px;
+    border-radius: 8px;
+    gap: 8px;
+    border: 1px solid #222;
 }
 
 .search-box input {
-    background: #1a1a1a;
+    background: transparent;
     border: none;
-    padding: 8px 15px;
-    border-radius: 8px;
-    color: white;
-    width: 250px;
     outline: none;
+    color: #fff;
+    width: 170px;
 }
+
+
 
 /* Logout Button */
 .logout-btn {
@@ -50,28 +100,6 @@ body {
 
 .logout-btn:hover {
     background: #00c58f;
-}
-
-/* ================= MENU ================= */
-
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    background: #121212;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.menu a:hover,
-.menu a.active {
-    color: #00e0a4;
 }
 
 /* ================= MAIN LAYOUT ================= */
@@ -221,4 +249,267 @@ body {
 .bearish {
     background: #3f0000;
     color: #ff4d4d;
+}
+
+/* footer */
+
+.footer {
+    background-color: #000;
+    color: #ccc;
+    padding: 60px 80px;
+    border-top: 1px solid #111;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    max-width: 450px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 40px;
+}
+
+.footer-logo h2 {
+    color: #1f5eff;
+    font-size: 18px;
+}
+
+.footer-address {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted #555;
+}
+
+.footer-links a:hover {
+    color: #1abc9c;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.social-icons i {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #1abc9c;
+}
+
+.footer-right h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-right ul {
+    list-style: none;
+}
+
+.footer-right ul li {
+    margin-bottom: 12px;
+}
+
+.footer-right ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer-right ul li a:hover {
+    color: #1abc9c;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+/* Smooth transition for theme change */
+body {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Toggle Button */
+.theme-toggle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    background: #1abc9c;
+}
+/* ================= LIGHT THEME ================= */
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light-theme {
+    background-color: #f5f7fa;
+    color: #111;
+}
+
+/* ================= NAVBAR ================= */
+
+body.light-theme .navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+body.light-theme .logo span {
+    color: #16a34a;
+}
+
+body.light-theme .nav-links a {
+    color: #333;
+}
+
+body.light-theme .nav-links a:hover {
+    color: #16a34a;
+}
+
+body.light-theme .nav-links a.active {
+    color: #16a34a;
+    border-bottom: 2px solid #16a34a;
+}
+
+body.light-theme .search-box {
+    background: #f0f0f0;
+}
+
+body.light-theme .search-box input {
+    color: #111;
+}
+
+body.light-theme .profile {
+    background: #ffffff;
+    color: rgb(6, 0, 0);
+}
+
+body.light-theme .theme-toggle {
+    background: #e5e5e5;
+    color: #111;
+}
+
+/* ================= CARDS ================= */
+
+body.light-theme .section-box,
+body.light-theme .investment-box,
+body.light-theme .trading-box,
+body.light-theme .coin-card,
+body.light-theme .news-card {
+    background: #ffffff;
+    color: #111;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+/* Section titles */
+body.light-theme .section-title {
+    color: #16a34a;
+}
+
+/* Coin Prices */
+body.light-theme .price {
+    color: #111;
+}
+
+body.light-theme .positive {
+    color: #16a34a;
+}
+
+body.light-theme .negative {
+    color: #dc2626;
+}
+
+/* ================= NEWS ================= */
+
+body.light-theme .news-card p {
+    color: #555;
+}
+
+/* ================= INVESTMENT ================= */
+
+body.light-theme .stat span {
+    font-weight: bold;
+}
+
+body.light-theme .red {
+    color: #dc2626;
+}
+
+/* ================= TRADING ================= */
+
+body.light-theme .trading-item {
+    background: #f3f4f6;
+    color: #111;
+}
+
+body.light-theme .badge.bullish {
+    background: #16a34a;
+    color: white;
+}
+
+body.light-theme .badge.bearish {
+    background: #dc2626;
+    color: white;
+}
+
+/* ================= FOOTER ================= */
+
+body.light-theme .footer {
+    background: #ffffff;
+    color: #333;
+    border-top: 1px solid #e5e5e5;
+}
+
+body.light-theme .footer h2,
+body.light-theme .footer h3 {
+    color: #16a34a;
+}
+
+body.light-theme .footer a {
+    color: #333;
+}
+
+body.light-theme .footer a:hover {
+    color: #16a34a;
+}
+
+body.light-theme .social-icons i {
+    color: #16a34a;
 }
