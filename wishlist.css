@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.search-box input {
+    background: #1a1a1a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    outline: none;
+}
+
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.menu a.active {
+    color: #00e0a4;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    padding: 40px 60px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= TABLE ================= */
+
+.table-box {
+    background: #121212;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    color: #aaa;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+tr {
+    border-bottom: 1px solid #1f1f1f;
+}
+
+tr:hover {
+    background: #1a1a1a;
+}
+
+.green { color: #00e0a4; }
+.red { color: #ff4d4d; }
+
+.remove-btn {
+    background: #ff4d4d;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.remove-btn:hover {
+    background: #cc0000;
+}
