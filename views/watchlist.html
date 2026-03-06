@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - Watchlist</title>
+<link rel="stylesheet" href="/css/wishlist.css">
+<link rel="icon" type="image/png" href="/images/Cryptovistalogo.png">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <!-- Left Section -->
+    <div class="nav-left">
+        <div class="logo">
+            <img src="/images/Cryptovistalogo.png" alt="logo">
+            <span>CryptoVista</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="/holdings">Holdings</a></li>
+            <li><a href="/watchlist">Watchlist</a></li>
+            <li><a href="/copytrading" class="active">Copytrading</a></li>
+        </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div class="nav-right">
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search....">
+    </div>
+
+    <div class="notification">
+        <i class="fa-regular fa-bell"></i>
+        <span class="badge">5</span>
+    </div>
+
+    <div class="profile">P</div>
+
+    <div class="theme-toggle" id="themeToggle">
+        🌙
+    </div>
+
+  </div>
+
+</nav>
+<!-- CONTENT -->
+<div class="container">
+
+    <div class="header">
+        <h2>Your Watchlist</h2>
+        <button class="add-btn" onclick="addCoin()">+ Add Coin</button>
+    </div>
+
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Coin</th>
+                    <th>Price</th>
+                    <th>24h Change</th>
+                    <th>Market Cap</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="watchlistBody">
+                <tr>
+                    <td>Bitcoin (BTC)</td>
+                    <td>$63,808</td>
+                    <td class="red">-1.27%</td>
+                    <td>$1.2T</td>
+                    <td><button class="remove-btn" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+
+                <tr>
+                    <td>Ethereum (ETH)</td>
+                    <td>$3,450</td>
+                    <td class="green">+2.14%</td>
+                    <td>$400B</td>
+                    <td><button class="remove-btn" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left Section -->
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="/images/Cryptovistalogo.png" alt="logo">
+                <h2>CRYPTOVISTA</h2>
+            </div>
+
+            <p class="footer-address">
+                TG-212, 2nd floor, Turing block <br>
+                Chitkara University, Jansla, Patiala - 173212 <br>
+                Punjab
+            </p>
+
+            <div class="footer-links">
+                <a href="#">Contact Us</a>
+                <a href="#">Download the App</a>
+            </div>
+
+            <div class="social-icons">
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <p class="copyright">
+                2026 CryptoVista. All rights reserved.
+            </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="footer-right">
+            <h3>CryptoVista</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Media & Press</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Help & Support</a></li>
+                <li><a href="#">Trust & Safety</a></li>
+                <li><a href="#">Investor Relations</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Font Awesome CDN (for icons) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+<script src="/js/watchlist.js"></script>
+
+
+
+</body>
+</html>

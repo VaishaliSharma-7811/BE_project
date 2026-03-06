@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CryptoVista - Buy Crypto</title>
+    <link rel="stylesheet" href="/css/buyCrypto.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">CryptoVista</div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- MENU -->
+    <div class="menu">
+        <li><a href="/explore">Explore</a></li>
+        <li><a href="/holdings">Holdings</a></li>
+        <li><a href="/watchlist">Watchlist</a></li>
+        <li><a href="/copytrading" class="active">Copytrading</a></li>
+
+        <li><a class="active" href="/buycrypto">BuyCrypto</a></li>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+        <div class="buy-card">
+            <h2>Buy Cryptocurrency</h2>
+
+            <div class="form-group">
+                <label>Select Coin</label>
+                <select id="coinSelect" onchange="calculateTotal()">
+                    <option value="63808">Bitcoin (BTC) - $63,808</option>
+                    <option value="3450">Ethereum (ETH) - $3,450</option>
+                    <option value="135">Solana (SOL) - $135</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Enter Quantity</label>
+                <input type="number" id="quantity" placeholder="Enter amount" oninput="calculateTotal()">
+            </div>
+
+            <div class="total-box">
+                Total Cost: $<span id="total">0</span>
+            </div>
+
+            <button class="buy-btn" onclick="buyCrypto()">Buy Now</button>
+        </div>
+
+    </div>
+    <script src="/js/buyCrypto.js"></script>
+
+</body>
+
+</html>
