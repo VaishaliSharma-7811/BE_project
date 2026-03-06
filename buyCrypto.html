@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - Buy Crypto</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.search-box input {
+    background: #1a1a1a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    outline: none;
+}
+
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.menu a.active {
+    color: #00e0a4;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================= BUY CARD ================= */
+
+.buy-card {
+    background: #121212;
+    padding: 40px;
+    border-radius: 15px;
+    width: 400px;
+    border: 1px solid #1f1f1f;
+}
+
+.buy-card h2 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.total-box {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    background: #00e0a4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.buy-btn:hover {
+    background: #00c58f;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CryptoVista</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="dashboard.html">Explore</a>
+    <a href="holdings.html">Holdings</a>
+    <a href="watchlist.html">Watchlist</a>
+    <a href="copytrading.html">Copytrading</a>
+    <a class="active" href="buycrypto.html">BuyCrypto</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <div class="buy-card">
+        <h2>Buy Cryptocurrency</h2>
+
+        <div class="form-group">
+            <label>Select Coin</label>
+            <select id="coinSelect" onchange="calculateTotal()">
+                <option value="63808">Bitcoin (BTC) - $63,808</option>
+                <option value="3450">Ethereum (ETH) - $3,450</option>
+                <option value="135">Solana (SOL) - $135</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Quantity</label>
+            <input type="number" id="quantity" placeholder="Enter amount" oninput="calculateTotal()">
+        </div>
+
+        <div class="total-box">
+            Total Cost: $<span id="total">0</span>
+        </div>
+
+        <button class="buy-btn" onclick="buyCrypto()">Buy Now</button>
+    </div>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+
+function calculateTotal() {
+    const price = document.getElementById("coinSelect").value;
+    const qty = document.getElementById("quantity").value;
+    const total = price * qty;
+
+    document.getElementById("total").innerText = total ? total.toFixed(2) : 0;
+}
+
+function buyCrypto() {
+    const qty = document.getElementById("quantity").value;
+
+    if (!qty || qty <= 0) {
+        alert("Please enter valid quantity.");
+        return;
+    }
+
+    alert("Purchase Successful 🚀");
+}
+</script>
+
+</body>
+</html>

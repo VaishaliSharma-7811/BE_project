@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CryptoVista - CopyTrading</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e0a4;
+    letter-spacing: 2px;
+}
+
+.search-box input {
+    background: #1a1a1a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    outline: none;
+}
+
+.logout-btn {
+    background: #00e0a4;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #00c58f;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #121212;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.menu a.active {
+    color: #00e0a4;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    padding: 40px 60px;
+}
+
+/* ================= TRADER CARDS ================= */
+
+.trader-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.trader-card {
+    background: #121212;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid #1f1f1f;
+}
+
+.trader-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0,224,164,0.15);
+}
+
+.trader-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.green { color: #00e0a4; }
+.red { color: #ff4d4d; }
+
+.copy-btn {
+    margin-top: 15px;
+    background: #00e0a4;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+}
+
+.copy-btn:hover {
+    background: #00c58f;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CryptoVista</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="dashboard.html">Explore</a>
+    <a href="holdings.html">Holdings</a>
+    <a href="watchlist.html">Watchlist</a>
+    <a class="active" href="copytrading.html">Copytrading</a>
+    <a href="#">BuyCrypto</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <h2 style="margin-bottom:30px;">Top Traders to Copy</h2>
+
+    <div class="trader-grid">
+
+        <div class="trader-card">
+            <div class="trader-name">CryptoKing</div>
+            <div class="stat green">Profit (30D): +28.5%</div>
+            <div class="stat">Followers: 12,450</div>
+            <div class="stat red">Risk Level: Medium</div>
+            <button class="copy-btn" onclick="copyTrader('CryptoKing')">Copy Now</button>
+        </div>
+
+        <div class="trader-card">
+            <div class="trader-name">ETHMaster</div>
+            <div class="stat green">Profit (30D): +18.2%</div>
+            <div class="stat">Followers: 8,320</div>
+            <div class="stat green">Risk Level: Low</div>
+            <button class="copy-btn" onclick="copyTrader('ETHMaster')">Copy Now</button>
+        </div>
+
+        <div class="trader-card">
+            <div class="trader-name">SolanaPro</div>
+            <div class="stat green">Profit (30D): +35.7%</div>
+            <div class="stat">Followers: 15,890</div>
+            <div class="stat red">Risk Level: High</div>
+            <button class="copy-btn" onclick="copyTrader('SolanaPro')">Copy Now</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+
+function copyTrader(name) {
+    alert("You are now copying " + name + " 🚀");
+}
+</script>
+
+</body>
+</html>
