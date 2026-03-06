@@ -3,7 +3,7 @@ const path = require("path");
 const router = express.Router();
 
 const exploreRoutes = require("./exploreRoutes");
-const holdingsRoutes = require("./holdingsRoutes");
+const holdingsRoutes = require("./holdingRoutes");
 const watchlistRoutes = require("./watchlistRoutes");
 const copytradingRoutes = require("./copytradingRoutes");
 const loginRoutes = require("./loginRoutes");

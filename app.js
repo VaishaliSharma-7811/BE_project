@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 const routes = require("./routes");
-const { notFoundHandler, serverErrorHandler } = require("./BE_project/middleware/errorHandler");
+
 app.use("/", routes);
 
 app.use(notFoundHandler);
