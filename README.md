@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 CryptoVista
 
 CryptoVista is a crypto-based web application developed as a college project.  
@@ -125,6 +124,3 @@ College Project – 2026
 ## 📜 License
 
 This project is developed for educational purposes only.
-=======
-# BE_project
->>>>>>> 5880b082d66f115afef21f213b8663d8a90d88e2
