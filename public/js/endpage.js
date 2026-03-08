@@ -1,3 +1,3 @@
-function logout() {
-    window.location.href = "login.html";
+function sendMessage() {
+    alert("Message sent successfully! We'll get back to you soon.");
 }

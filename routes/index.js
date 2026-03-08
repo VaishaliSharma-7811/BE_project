@@ -9,6 +9,7 @@ const copytradingRoutes = require("./copytradingRoutes");
 const loginRoutes = require("./loginRoutes");
 const buyCryptoRoutes = require("./buyCryptoRoutes");
 const endPageRoutes = require("./endPageRoutes");
+const signupRoutes = require("./signupRoutes");
 
 // Home route
 router.get("/", (req, res) => {
@@ -22,6 +23,8 @@ router.use("/copytrading", copytradingRoutes);
 router.use("/login", loginRoutes);
 router.use("/buycrypto", buyCryptoRoutes);
 router.use("/endpage", endPageRoutes);
+router.use("/signup", signupRoutes);
+
 
 router.get("/error-test", (req, res, next) => {
   next(new Error("Simulated server error"));

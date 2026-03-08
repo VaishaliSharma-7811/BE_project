@@ -1,22 +1,23 @@
-function logout() {
-    window.location.href = "login.html";
+function calculateCost(){
+
+let price=document.getElementById("coinSelect").value;
+let qty=document.getElementById("quantity").value;
+
+let total=price*qty;
+
+document.getElementById("totalCost").innerText=total.toFixed(2);
+
 }
 
-function calculateTotal() {
-    const price = document.getElementById("coinSelect").value;
-    const qty = document.getElementById("quantity").value;
-    const total = price * qty;
+function buyCrypto(){
 
-    document.getElementById("total").innerText = total ? total.toFixed(2) : 0;
+let qty=document.getElementById("quantity").value;
+
+if(qty=="" || qty<=0){
+alert("Enter valid quantity");
+return;
 }
 
-function buyCrypto() {
-    const qty = document.getElementById("quantity").value;
+alert("Purchase Successful!");
 
-    if (!qty || qty <= 0) {
-        alert("Please enter valid quantity.");
-        return;
-    }
-
-    alert("Purchase Successful 🚀");
 }

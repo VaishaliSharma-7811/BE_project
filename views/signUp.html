@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CryptoVista - Login</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <title>CryptoVista - Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signUp.css">
     <link rel="icon" type="image/png" href="/images/Cryptovistalogo.png">
+
 
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
+
     <nav class="navbar">
 
         <div class="logo">
@@ -23,20 +28,23 @@
 
     </nav>
 
-    <div class="login-wrapper">
+    <!-- SIGNUP -->
 
-        <div class="login-card">
+    <div class="signup-wrapper">
 
-            <h2>Welcome Back</h2>
+        <div class="signup-card">
 
+            <h2>Create Account</h2>
+
+            <input type="text" id="name" placeholder="Full Name">
             <input type="email" id="email" placeholder="Email">
             <input type="password" id="password" placeholder="Password">
-
-            <button onclick="login()">Login</button>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <button onclick="signup()">Sign Up</button>
 
             <div class="toggle">
-                Don't have an account?
-                <span onclick="window.location.href='/signup'">Sign Up</span>
+                Already have an account?
+                <span onclick="window.location.href='/login'">Login</span>
             </div>
 
         </div>
@@ -86,8 +94,7 @@
 
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-    <script src="/js/login.js"></script>
-
+    <script src="/js/signUp.js"></script>
 
 
 </body>

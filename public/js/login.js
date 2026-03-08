@@ -1,54 +1,59 @@
-let isLogin = true;
+function login(){
 
-const toggleText = document.getElementById("toggleText");
-const formTitle = document.getElementById("formTitle");
-const submitBtn = document.getElementById("submitBtn");
-const nameField = document.getElementById("nameField");
+let email = document.getElementById("email").value.trim();
+let password = document.getElementById("password").value.trim();
 
-toggleText.addEventListener("click", function() {
-    isLogin = !isLogin;
+let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-    if (isLogin) {
-        formTitle.innerText = "Login";
-        submitBtn.innerText = "Login";
-        nameField.style.display = "none";
-        toggleText.innerHTML = `Don't have an account? <span>Sign Up</span>`;
-    } else {
-        formTitle.innerText = "Sign Up";
-        submitBtn.innerText = "Sign Up";
-        nameField.style.display = "block";
-        toggleText.innerHTML = `Already have an account? <span>Login</span>`;
-    }
-});
+/* Email Empty */
 
-submitBtn.addEventListener("click", function() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+if(email === ""){
+alert("Please enter your email");
+return;
+}
 
-    if (!email || !password) {
-        alert("Please fill all required fields.");
-        return;
-    }
+/* Email Format */
 
-    if (!isLogin) {
-        const username = document.getElementById("username").value;
-        if (!username) {
-            alert("Please enter your name.");
-            return;
-        }
-        alert("Signup Successful 🚀");
-    } else {
-        alert("Login Successful 🚀");
-    }
-});
-const toggle = document.getElementById("themeToggle");
+if(!email.match(emailPattern)){
+alert("Please enter a valid email address");
+return;
+}
 
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
+/* Password Empty */
 
-    if (document.body.classList.contains("light-theme")) {
-        toggle.textContent = "☀️";
-    } else {
-        toggle.textContent = "🌙";
-    }
-});
+if(password === ""){
+alert("Please enter your password");
+return;
+}
+
+/* Password Length */
+
+if(password.length < 6){
+alert("Password must be at least 6 characters");
+return;
+}
+
+/* Check Stored User */
+
+let user = JSON.parse(localStorage.getItem("cryptovistaUser"));
+
+if(!user){
+alert("No account found. Please sign up.");
+return;
+}
+
+/* Verify Login */
+
+if(email === user.email && password === user.password){
+
+alert("Login successful!");
+
+window.location.href="/explore";
+
+}else{
+
+alert("Invalid email or password");
+
+}
+
+}

@@ -1,18 +1,23 @@
 // Search interaction
-document.getElementById("searchInput").addEventListener("keyup", function(e) {
-    if (e.key === "Enter") {
-        alert("Searching for: " + this.value);
-    }
-});
-const toggle = document.getElementById("themeToggle");
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
 
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-mode");
+    themeToggle.textContent = "☀️";
+}
 
-    if (document.body.classList.contains("light-theme")) {
-        toggle.textContent = "☀️";
+// Toggle theme
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "☀️";
     } else {
-        toggle.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "🌙";
     }
 });
 
