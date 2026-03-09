@@ -1,4 +1,4 @@
 function logout(){
 localStorage.removeItem("cryptovistaUser");
-window.location.href="login.html";
+window.location.href="/";
 }

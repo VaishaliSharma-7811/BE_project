@@ -1,5 +1,5 @@
 function logout() {
-    window.location.href = "login.html";
+    window.location.href = "/login";
 }
 const toggle = document.getElementById("themeToggle");
 
