@@ -24,6 +24,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
+    color: white;
 }
 
 .logo img {
@@ -54,15 +56,39 @@ body {
 
 .menu {
     display: flex;
-    gap: 25px;
-    padding: 15px 60px;
+    justify-content: center;
+    gap: 40px;
     background: #0f0f0f;
-    color: #aaa;
+    padding: 15px 0;
 }
 
-.menu span:nth-child(3) {
+/* remove default link styling */
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    /* shift to left */
+    gap: 40px;
+    background: #0f0f0f;
+    padding: 15px 70px;
+    /* little space from left edge */
+}
+
+.menu a {
+    text-decoration: none;
     color: white;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* visited links */
+.menu a:visited {
+    color: white;
+}
+
+/* hover effect */
+.menu a:hover {
+    color: #00ffcc;
 }
 
 /* PAGE */

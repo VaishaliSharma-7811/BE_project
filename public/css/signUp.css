@@ -1,168 +1,169 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family:'Segoe UI',sans-serif;
-background:#0b0b0b;
-color:white;
-display:flex;
-flex-direction:column;
-min-height:100vh;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ================= NAVBAR ================= */
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 60px;
-background:#111;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
 }
 
-.logo img{
-width:45px;
+.logo img {
+    width: 45px;
 }
 
-.logo span{
-font-size:24px;
-font-weight:700;
+.logo span {
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.search-box input{
-padding:8px 12px;
-background:#1a1a1a;
-border:none;
-border-radius:8px;
-color:white;
-outline:none;
+.search-box input {
+    padding: 8px 12px;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    outline: none;
 }
 
 /* ================= SIGNUP ================= */
 
-.signup-wrapper{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:60px 20px;
+.signup-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
 
-.signup-card{
-background:#121212;
-padding:40px;
-width:380px;
-border-radius:14px;
-text-align:center;
-border:1px solid #1f1f1f;
+.signup-card {
+    background: #121212;
+    padding: 40px;
+    width: 380px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #1f1f1f;
 }
 
-.signup-card h2{
-margin-bottom:25px;
+.signup-card h2 {
+    margin-bottom: 25px;
 }
 
-input{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-background:#1a1a1a;
-border:none;
-border-radius:8px;
-color:white;
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    color: white;
 }
 
-button{
-width:100%;
-padding:12px;
-background:#00e0a4;
-border:none;
-border-radius:8px;
-font-weight:600;
-cursor:pointer;
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00e0a4;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-button:hover{
-background:#00c58f;
+button:hover {
+    background: #00c58f;
 }
 
-.toggle{
-margin-top:20px;
-font-size:14px;
-color:#aaa;
+.toggle {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
 }
 
-.toggle span{
-color:#00e0a4;
-cursor:pointer;
+.toggle span {
+    color: #00e0a4;
+    cursor: pointer;
 }
 
 /* ================= FOOTER ================= */
 
-.footer{
-background:#121212;
-padding:50px 60px;
+.footer {
+    background: #121212;
+    padding: 50px 60px;
 }
 
-.footer-container{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.footer-logo{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:15px;
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.footer-logo img{
-width:40px;
+.footer-logo img {
+    width: 40px;
 }
 
-.footer-logo h2{
-font-size:20px;
+.footer-logo h2 {
+    font-size: 20px;
 }
 
-.footer-address{
-color:#aaa;
-margin-bottom:20px;
-font-size:14px;
+.footer-address {
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
-.footer-right h3{
-margin-bottom:15px;
+.footer-right h3 {
+    margin-bottom: 15px;
 }
 
-.footer-right ul{
-list-style:none;
+.footer-right ul {
+    list-style: none;
 }
 
-.footer-right li{
-margin-bottom:8px;
+.footer-right li {
+    margin-bottom: 8px;
 }
 
-.footer-right a{
-color:#aaa;
-text-decoration:none;
+.footer-right a {
+    color: #aaa;
+    text-decoration: none;
 }
 
-.footer-right a:hover{
-color:#00e0a4;
+.footer-right a:hover {
+    color: #00e0a4;
 }
 
-.copyright{
-margin-top:20px;
-font-size:13px;
-color:#777;
+.copyright {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
 }
-
