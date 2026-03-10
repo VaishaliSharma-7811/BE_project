@@ -117,6 +117,16 @@ margin-bottom:10px;
 .price{
 margin-top:10px;
 font-size:18px;
+transition: color 0.3s ease;
+}
+
+.price.flash{
+animation: priceFlash 0.6s ease;
+}
+
+@keyframes priceFlash{
+0%{ color: #00e0a4; text-shadow: 0 0 8px #00e0a4; }
+100%{ color: white; text-shadow: none; }
 }
 
 .green{
